@@ -1,0 +1,48 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pokemon API",
+    "version": "1.0.0",
+    "description": "API for retrieving Pokemon data"
+  },
+  "paths": {
+    "/pokemon": {
+      "get": {
+        "summary": "Get a list of all Pokemon",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pokemon"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pokemon": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
